@@ -1,0 +1,62 @@
+{
+  "name": "Person",
+  "plural": "People",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "foodPrefs": {
+      "type": "hasMany",
+      "model": "food_pref",
+      "foreignKey": "personId"
+    },
+    "userAllergies": {
+      "type": "hasMany",
+      "model": "user_allergy",
+      "foreignKey": "personId"
+    },
+    "userExperiences": {
+      "type": "hasMany",
+      "model": "user_experience",
+      "foreignKey": "personId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__get__foodPrefs",
+      "model": "food_pre"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getPrefs"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__get__userAllergies",
+      "model": "user_allergy"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__get__userExperiences",
+      "model": "user_experience"
+    }
+  ],
+  "methods": []
+}

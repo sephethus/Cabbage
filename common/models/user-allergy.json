@@ -1,0 +1,34 @@
+{
+  "name": "user_allergy",
+  "plural": "user_allergies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "allergyId": {
+      "type": "number",
+      "required": true
+    },
+    "personId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "allergy_to_person": {
+      "type": "belongsTo",
+      "model": "Person",
+      "foreignKey": "personId"
+    },
+    "user_allergy_to_allergy": {
+      "type": "belongsTo",
+      "model": "allergy",
+      "foreignKey": "allergyId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

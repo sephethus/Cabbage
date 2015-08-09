@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Person": {
+    "dataSource": "db",
+    "public": true
+  },
+  "food_pref": {
+    "dataSource": "db",
+    "public": true
+  },
+  "food_type": {
+    "dataSource": "db",
+    "public": true
+  },
+  "allergy": {
+    "dataSource": "db",
+    "public": true
+  },
+  "user_allergy": {
+    "dataSource": "db",
+    "public": true
+  },
+  "user_experience": {
+    "dataSource": "db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  }
+}
